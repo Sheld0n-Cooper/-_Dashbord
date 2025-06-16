@@ -1,7 +1,7 @@
 // src/lib/utils/api.js
 // @ts-check
 
-import { calculateRSI, calculateRollingATH } from './calculations.js';
+import { calculateRSI, calculateRollingATH, runSimulation } from './calculations.js';
 // FIX : Importer les types depuis le fichier centralisé pour casser la dépendance circulaire
 /** @typedef {import('../types.js').StrategyParams} StrategyParams */
 /** @typedef {import('../types.js').SimulationResult} SimulationResult */

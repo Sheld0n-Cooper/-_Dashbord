@@ -6,15 +6,15 @@
 		strategies.length > 0 ? [...strategies].sort((a, b) => b.pnlPercent - a.pnlPercent)[0] : null
 	);
 
-	const insights = $derived(() => {
+	const insights = $derived((() => {
 		if (!results || !winner) return [];
 		const { dca, v2 } = results;
 		let list = [`🏆 La <strong>${winner.name}</strong> a le meilleur rendement (${formatPercent(winner.pnlPercent)}).`];
-		if (v2.averageCost > 0 && v2.averageCost < dca.averageCost) {
+		if (v2 && dca && v2.averageCost > 0 && v2.averageCost < dca.averageCost) {
 			list.push(`📉 Le coût moyen de la <strong>v2.0</strong> est inférieur à celui du DCA.`);
 		}
 		return list;
-	});
+	})());
 </script>
 
 {#if results}
