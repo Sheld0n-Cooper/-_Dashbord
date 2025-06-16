@@ -46,6 +46,5 @@ export function processHistoricalData(prices) {
  * @returns {{dca: SimulationResult, v1: SimulationResult, v2: SimulationResult} | null}
  */
 export function runAllStrategies(processedData, params) {
-	const { runSimulation } = require('./calculations.js');
 	return runSimulation(processedData, params);
 }
